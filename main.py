@@ -60,7 +60,7 @@ def span_calc(n, a, b, f):
 	Returns: the value of W(n).
 	"""
 	# TODO
-	pass
+	return work_calc(n, a, b, f)
 
 def test_work():
 	""" done. """
@@ -101,10 +101,12 @@ def test_compare_work():
     
 	# create work_fn1
 	# create work_fn2
-
-  #res = compare_work(work_fn1, work_fn2)
-  #print(res)
-	pass
+	work_fn1(1)==1
+	work_fn2(1)==1
+	work_fn1=lambda n:2*work_fn1(n//2)+work_fn1(n)
+	work_fn2=lambda n:2*work_fn2(n//2)+work_fn2(n*n)
+	res = compare_work(work_fn1, work_fn2)
+	print(res)
 
 def test_compare_span():
 	# TODO
